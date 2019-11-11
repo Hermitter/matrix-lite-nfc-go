@@ -9,9 +9,10 @@ import (
 
 func main() {
 	for {
-		status := nfc.Status(0)
-		fmt.Println(status)
+		code, tag := nfc.Read(nfc.ReadConf{true, false, false, 0})
+		fmt.Println(code, nfc.Status(code))
+		fmt.Printf("%+v\n", tag)
 
-		time.Sleep(50 * time.Millisecond)
+		time.Sleep(300 * time.Millisecond)
 	}
 }
