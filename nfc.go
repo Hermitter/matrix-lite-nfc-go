@@ -4,17 +4,21 @@ package nfc
 #cgo CXXFLAGS: -std=c++11 -DNXPBUILD__PH_RASPBERRY_PI -O3 -I/usr/local/include/matrix_nfc/nxp_nfc/NxpNfcRdLib/types -I/usr/local/include/matrix_nfc/nxp_nfc/NxpNfcRdLib/intfs
 #cgo LDFLAGS:  -lmatrix_hal_nfc
 
-#include <stdlib.h>
 #include "nfc.h"
+#include <stdlib.h>
 */
 import (
 	"C"
 )
 import "unsafe"
 
+// Status returns a message from an NFC status code.
 func Status(code int) string {
-	status := C.nfc_status(C.int(code))
-	defer C.free(unsafe.Pointer(status))
+	return cGoString(C.nfc_status(C.int(code)))
+}
 
-	return C.GoString(status)
+// Handle CString to GoString conversion & memory deallocation
+func cGoString(cstring *C.char) string {
+	defer C.free(unsafe.Pointer(cstring))
+	return C.GoString(cstring)
 }

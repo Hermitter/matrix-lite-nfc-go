@@ -13,6 +13,6 @@ func main() {
 		fmt.Println(code, nfc.Status(code))
 		fmt.Printf("%+v\n", tag)
 
-		time.Sleep(300 * time.Millisecond)
+		time.Sleep(50 * time.Millisecond)
 	}
 }
