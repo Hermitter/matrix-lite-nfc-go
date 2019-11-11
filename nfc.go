@@ -22,3 +22,6 @@ func cGoString(cstring *C.char) string {
 	defer C.free(unsafe.Pointer(cstring))
 	return C.GoString(cstring)
 }
+
+// TODO: add a mutex lock for NFC usage
+// https://tour.golang.org/concurrency/9
