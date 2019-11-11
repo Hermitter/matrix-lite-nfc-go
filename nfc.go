@@ -10,7 +10,11 @@ package nfc
 import (
 	"C"
 )
+import "unsafe"
 
 func Status(code int) string {
-	return C.GoString(C.nfc_status(C.int(code)))
+	status := C.nfc_status(C.int(code))
+	defer C.free(unsafe.Pointer(status))
+
+	return C.GoString(status)
 }

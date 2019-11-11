@@ -3,6 +3,6 @@
 
 #include <stdbool.h>
 
-char * nfc_status(int);
+char* nfc_status(int);
 
 #endif

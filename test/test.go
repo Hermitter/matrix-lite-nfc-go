@@ -2,12 +2,16 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	nfc "github.com/matrix-io/matrix-lite-nfc-go"
 )
 
 func main() {
-	status := nfc.Status(0)
+	for {
+		status := nfc.Status(0)
+		fmt.Println(status)
 
-	fmt.Println(status)
+		time.Sleep(50 * time.Millisecond)
+	}
 }
