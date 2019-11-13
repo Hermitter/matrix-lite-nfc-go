@@ -12,6 +12,7 @@ import (
 )
 import (
 	"unsafe"
+
 	"github.com/matrix-io/matrix-lite-nfc-go/helper"
 )
 
