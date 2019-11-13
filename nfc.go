@@ -10,7 +10,12 @@ package nfc
 import (
 	"C"
 )
-import "unsafe"
+import (
+	"unsafe"
+	m "github.com/matrix-io/matrix-lite-nfc-go/mutex"
+)
+
+var nfcLock m.Mutex
 
 // Status returns a message from an NFC status code.
 func Status(code int) string {
@@ -22,6 +27,3 @@ func cGoString(cstring *C.char) string {
 	defer C.free(unsafe.Pointer(cstring))
 	return C.GoString(cstring)
 }
-
-// TODO: add a mutex lock for NFC usage
-// https://tour.golang.org/concurrency/9

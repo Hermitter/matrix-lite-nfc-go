@@ -24,6 +24,13 @@ type ReadResult struct {
 
 // Read scans an NFC tag
 func Read(options ReadConf) (int, ReadResult) {
+	// lock/unlock mutex
+	if !nfcLock.TryLock() {
+		return 1024, ReadResult{}
+	}
+	// nfcLock.lock()
+	defer nfcLock.Unlock()
+
 	// Convert Go struct to C struct
 	var cOptions C.nfc_read_conf
 	cOptions.info = C.bool(options.Info)

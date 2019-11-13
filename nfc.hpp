@@ -8,10 +8,6 @@
 extern matrix_hal::NFC nfc;
 extern matrix_hal::NFCData nfc_data;
 
-// TODO implement C compatible Mutex
-// #include <mutex>
-// extern std::mutex nfc_usage;
-
 // Helpful functions
 namespace helper {
     char * str_to_char(std::string);
