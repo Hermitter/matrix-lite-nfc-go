@@ -1,4 +1,4 @@
-package mutex
+package helper
 
 // Source: https://github.com/LK4D4/trylock
 
