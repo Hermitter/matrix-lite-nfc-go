@@ -10,7 +10,7 @@ import (
 // ReadConf determines what data is read from a tag
 type ReadConf struct {
 	Info, Pages, Ndef bool
-	Page              uint
+	Page              int
 }
 
 type ReadInfoData struct {
@@ -20,6 +20,9 @@ type ReadInfoData struct {
 
 type ReadResult struct {
 	Info ReadInfoData
+	Page [4]int
+	// pages ReadPagesData
+	// ndef	 ReadNdefData
 }
 
 // Read scans an NFC tag
@@ -44,6 +47,7 @@ func Read(options ReadConf) (int, ReadResult) {
 	// Convert C struct to Go struct
 	results := ReadResult{}
 	populateInfo(&results, cResults.info)
+	results.Page = [4]int{2, 3, 5, 4}
 
 	return int(cResults.status), results
 }
