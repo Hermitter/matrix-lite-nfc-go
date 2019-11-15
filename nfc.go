@@ -13,10 +13,10 @@ import (
 import (
 	"unsafe"
 
-	"github.com/matrix-io/matrix-lite-nfc-go/helper"
+	"github.com/matrix-io/trylock"
 )
 
-var nfcLock helper.Mutex
+var nfcLock trylock.Mutex
 
 // Status returns a message from an NFC status code.
 func Status(code int) string {

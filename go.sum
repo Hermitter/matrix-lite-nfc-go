@@ -1,5 +1,9 @@
+github.com/LK4D4/trylock v0.0.0-20191027065348-ff7e133a5c54 h1:sg9CWNOhr58hMGmJ0q7x7jQ/B1RK/GyHNmeaYCJos9M=
+github.com/LK4D4/trylock v0.0.0-20191027065348-ff7e133a5c54/go.mod h1:uHbOgfPowb74TKlV4AR5Az2haG6evxzM8Lmj1Xil25E=
 github.com/matrix-io/matrix-lite-go v0.0.0-20191014043906-b8518f0d30f3 h1:KI4H+k/zCmHKGkuaBL1dgDprDR9xyqQbwdI229E7hMM=
 github.com/matrix-io/matrix-lite-go v0.0.0-20191014043906-b8518f0d30f3/go.mod h1:bjcY8ZWZBcZdb1iErCoDZDCJirBjCehq3JHMcoZyRz8=
+github.com/matrix-io/trylock v0.0.0-20191027065348-ff7e133a5c54 h1:h+VSUm3RyNJ5QgMq/8Umpn0ReDC3EAJ5H8TmbdAWEv0=
+github.com/matrix-io/trylock v0.0.0-20191027065348-ff7e133a5c54/go.mod h1:ON1f23oKvAJeieF5RxF+sMptc9SwZZfKVHFyY6xLB64=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/image v0.0.0-20190703141733-d6a02ce849c9 h1:uc17S921SPw5F2gJo7slQ3aqvr2RwpL7eb3+DZncu3s=
