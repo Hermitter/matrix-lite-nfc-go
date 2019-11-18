@@ -1,7 +1,7 @@
 package nfc
 
 /*
-#include "read.h"
+#include "hal_nfc_wrapper/read.h"
 */
 import (
 	"C"

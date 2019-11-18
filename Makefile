@@ -1,4 +1,4 @@
 all:
 	clear
-	go install
+	go install -a
 	go run ./test/test.go
