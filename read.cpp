@@ -22,7 +22,7 @@ nfc_read_result nfc_read(nfc_read_conf options)
     if (options.info)
     {
         nfc_status = nfc.Activate();
-        info_status = nfc.ReadInfo(&nfc_data.info);
+        // info_status = nfc.ReadInfo(&nfc_data.info);
         nfc.Deactivate();
     }
     if (options.page > -1)
@@ -52,6 +52,6 @@ nfc_read_result nfc_read(nfc_read_conf options)
 
     return nfc_read_result{
         .info = info_result,
-        .page = nfc_page_data,
+        // .page = nfc_page_data,
         .status = nfc_status};
 }

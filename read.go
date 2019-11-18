@@ -20,7 +20,7 @@ type ReadInfoData struct {
 
 type ReadResult struct {
 	Info ReadInfoData
-	Page [4]int
+	Page [4]uint
 	// pages ReadPagesData
 	// ndef	 ReadNdefData
 }
@@ -47,7 +47,7 @@ func Read(options ReadConf) (int, ReadResult) {
 	// Convert C struct to Go struct
 	results := ReadResult{}
 	populateInfo(&results, cResults.info)
-	results.Page = [4]int{2, 3, 5, 4}
+	results.Page = [4]uint{2, 3, 5, 4}
 
 	return int(cResults.status), results
 }
