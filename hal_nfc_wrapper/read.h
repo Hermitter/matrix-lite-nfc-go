@@ -32,15 +32,13 @@ typedef struct
 {
 } nfc_ndef_data;
 
-uint8_t *page;
-
 // Read Result //
 typedef struct
 {
     nfc_info_data info;
     // nfc_pages_data pages;
     // nfc_ndef_data ndef;
-    uint8_t page[4];
+    uint8_t *page;
     int status;
 } nfc_read_result;
 

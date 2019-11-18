@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	nfc "github.com/matrix-io/matrix-lite-nfc-go"
 	matrix "github.com/matrix-io/matrix-lite-go"
+	nfc "github.com/matrix-io/matrix-lite-nfc-go"
 	"sync"
 	"time"
 )
@@ -13,7 +13,7 @@ func main() {
 	fmt.Println("Starting NFC Read")
 
 	wg.Add(1)
-	go read(&wg)
+	read(&wg)
 
 	// for {
 	// 	fmt.Println("Hello!")
@@ -27,11 +27,11 @@ func main() {
 func read(wg *sync.WaitGroup) {
 	m := matrix.Init()
 	for {
-		code, tag := nfc.Read(nfc.ReadConf{true, false, false, 0})
+		code, tag := nfc.Read(nfc.ReadConf{true, false, false, 30})
 
 		if code == 256 {
 			fmt.Printf("%+v\n", tag)
-			m.Led.Set("blue")
+			// m.Led.Set("blue")
 		} else if code == 1024 {
 			fmt.Println("...Nothing Scanned...")
 			m.Led.Set("black")
